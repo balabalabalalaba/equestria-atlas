@@ -1,0 +1,730 @@
+[
+ {
+  "id": "title",
+  "title": "The World Atlas",
+  "bpm": 84,
+  "bars": 20,
+  "bpb": 4,
+  "samples": 2742857,
+  "seconds": 57.143,
+  "lufs": -16.0,
+  "true_peak": -4.17,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    4,
+    "theme"
+   ],
+   [
+    8,
+    "answer"
+   ],
+   [
+    12,
+    "theme 2"
+   ],
+   [
+    16,
+    "coda"
+   ]
+  ]
+ },
+ {
+  "id": "map_day",
+  "title": "Wind in the Envelope",
+  "bpm": 104,
+  "bars": 48,
+  "bpb": 4,
+  "samples": 5316923,
+  "seconds": 110.769,
+  "lufs": -16.0,
+  "true_peak": -1.92,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    4,
+    "A"
+   ],
+   [
+    12,
+    "A'"
+   ],
+   [
+    20,
+    "B"
+   ],
+   [
+    28,
+    "C"
+   ],
+   [
+    36,
+    "A''"
+   ],
+   [
+    44,
+    "outro"
+   ]
+  ]
+ },
+ {
+  "id": "map_night",
+  "title": "Lanterns over Equestria",
+  "bpm": 104,
+  "bars": 48,
+  "bpb": 4,
+  "samples": 5316923,
+  "seconds": 110.769,
+  "lufs": -16.0,
+  "true_peak": -4.05,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    4,
+    "A"
+   ],
+   [
+    12,
+    "A'"
+   ],
+   [
+    20,
+    "B"
+   ],
+   [
+    28,
+    "C"
+   ],
+   [
+    36,
+    "A''"
+   ],
+   [
+    44,
+    "outro"
+   ]
+  ]
+ },
+ {
+  "id": "race",
+  "title": "Ring Rush",
+  "bpm": 138,
+  "bars": 32,
+  "bpb": 4,
+  "samples": 2671304,
+  "seconds": 55.652,
+  "lufs": -16.0,
+  "true_peak": -3.94,
+  "form": [
+   [
+    0,
+    "A"
+   ],
+   [
+    8,
+    "B"
+   ],
+   [
+    16,
+    "A'"
+   ],
+   [
+    24,
+    "break"
+   ]
+  ]
+ },
+ {
+  "id": "canterlot",
+  "title": "Sunrise over Canterlot",
+  "bpm": 96,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 3120000,
+  "seconds": 65.0,
+  "lufs": -16.0,
+  "true_peak": -1.45,
+  "form": [
+   [
+    0,
+    "fanfare"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "trio"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "cloudsdale",
+  "title": "Above the Clouds",
+  "bpm": 112,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2674286,
+  "seconds": 55.714,
+  "lufs": -16.0,
+  "true_peak": -7.11,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "ponyville",
+  "title": "Ponyville Morning",
+  "bpm": 104,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2880000,
+  "seconds": 60.0,
+  "lufs": -16.0,
+  "true_peak": -3.81,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "sweet_apple_acres",
+  "title": "Apple Bucking Hoedown",
+  "bpm": 126,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2377143,
+  "seconds": 49.524,
+  "lufs": -16.0,
+  "true_peak": -1.81,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "everfree",
+  "title": "Whispering Everfree",
+  "bpm": 84,
+  "bars": 28,
+  "bpb": 4,
+  "samples": 3840000,
+  "seconds": 80.0,
+  "lufs": -16.0,
+  "true_peak": -4.17,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    4,
+    "A"
+   ],
+   [
+    12,
+    "B"
+   ],
+   [
+    20,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "neighagra_falls",
+  "title": "The Roar of Neighagra",
+  "bpm": 116,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2582069,
+  "seconds": 53.793,
+  "lufs": -16.0,
+  "true_peak": -3.59,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "rainbow_falls",
+  "title": "Rainbow Hoops",
+  "bpm": 132,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2269091,
+  "seconds": 47.273,
+  "lufs": -16.0,
+  "true_peak": -3.91,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "manehattan",
+  "title": "Big City Swing",
+  "bpm": 120,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2496000,
+  "seconds": 52.0,
+  "lufs": -16.0,
+  "true_peak": -2.73,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "bridge"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "baltimare",
+  "title": "Harbour Shuffle",
+  "bpm": 98,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 3056327,
+  "seconds": 63.673,
+  "lufs": -16.0,
+  "true_peak": -4.16,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "griffonstone",
+  "title": "Griffonstone Ramparts",
+  "bpm": 92,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 3255652,
+  "seconds": 67.826,
+  "lufs": -16.01,
+  "true_peak": -1.48,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "dragon_lands",
+  "title": "Land of Fire",
+  "bpm": 100,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2995200,
+  "seconds": 62.4,
+  "lufs": -16.01,
+  "true_peak": -1.46,
+  "form": [
+   [
+    0,
+    "riff"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "mount_aris",
+  "title": "Mount Aris and the Sea",
+  "bpm": 104,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2880000,
+  "seconds": 60.0,
+  "lufs": -16.0,
+  "true_peak": -4.94,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "under the sea"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "klugetown",
+  "title": "Klugetown Bazaar",
+  "bpm": 112,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2674286,
+  "seconds": 55.714,
+  "lufs": -16.0,
+  "true_peak": -2.21,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "changeling_kingdom",
+  "title": "The Blooming Hive",
+  "bpm": 96,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 3120000,
+  "seconds": 65.0,
+  "lufs": -16.0,
+  "true_peak": -2.91,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "dark"
+   ],
+   [
+    10,
+    "bloom"
+   ],
+   [
+    18,
+    "full bloom"
+   ]
+  ]
+ },
+ {
+  "id": "appleloosa",
+  "title": "Appleloosa Sundown",
+  "bpm": 96,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 3120000,
+  "seconds": 65.0,
+  "lufs": -16.0,
+  "true_peak": -1.94,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "las_pegasus",
+  "title": "Neon Strip",
+  "bpm": 112,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2674286,
+  "seconds": 55.714,
+  "lufs": -16.0,
+  "true_peak": -2.15,
+  "form": [
+   [
+    0,
+    "groove"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "showtime"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "vanhoover",
+  "title": "Rain on Vanhoover",
+  "bpm": 80,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 3744000,
+  "seconds": 78.0,
+  "lufs": -16.0,
+  "true_peak": -3.29,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "crystal_empire",
+  "title": "The Crystal Waltz",
+  "bpm": 132,
+  "bars": 52,
+  "bpb": 3,
+  "samples": 3403636,
+  "seconds": 70.909,
+  "lufs": -16.0,
+  "true_peak": -3.35,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    4,
+    "A"
+   ],
+   [
+    20,
+    "B"
+   ],
+   [
+    36,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "yakyakistan",
+  "title": "Yak Stomp",
+  "bpm": 110,
+  "bars": 26,
+  "bpb": 4,
+  "samples": 2722909,
+  "seconds": 56.727,
+  "lufs": -16.0,
+  "true_peak": -1.72,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    2,
+    "A"
+   ],
+   [
+    10,
+    "B"
+   ],
+   [
+    18,
+    "A'"
+   ]
+  ]
+ },
+ {
+  "id": "castle_two_sisters",
+  "title": "The Tree of Harmony",
+  "bpm": 84,
+  "bars": 36,
+  "bpb": 3,
+  "samples": 3702857,
+  "seconds": 77.143,
+  "lufs": -16.0,
+  "true_peak": -4.07,
+  "form": [
+   [
+    0,
+    "intro"
+   ],
+   [
+    4,
+    "lullaby"
+   ],
+   [
+    12,
+    "lullaby'"
+   ],
+   [
+    20,
+    "harmony"
+   ],
+   [
+    28,
+    "harmony'"
+   ]
+  ]
+ }
+]

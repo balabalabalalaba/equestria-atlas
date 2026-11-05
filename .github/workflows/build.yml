@@ -1,0 +1,63 @@
+# Builds the Windows version of the game on GitHub's own machines and publishes its zip as a Release.
+# A release is made when a version tag is pushed (git tag v1.1 && git push origin v1.1); "Run workflow" on
+# the Actions page builds the zip without a release (download it from the run's Artifacts).
+name: Build the game
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  SDL_VIDEODRIVER: dummy          # the self-test runs without a screen or a sound card
+  SDL_AUDIODRIVER: dummy
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install the libraries
+        run: python -m pip install -r packaging/requirements.txt
+      - name: Build Equestria Atlas.exe
+        run: python -m PyInstaller --noconfirm --clean --distpath dist --workpath build packaging/equestria_atlas.spec
+      - name: Self-test (loads every place, draws each at three hours, builds every sound)
+        shell: pwsh
+        run: |
+          $p = Start-Process -FilePath "dist\Equestria Atlas\Equestria Atlas.exe" -ArgumentList "--selftest" -Wait -PassThru
+          Get-Content "$env:APPDATA\Equestria Atlas\selftest.txt"
+          if ($p.ExitCode -ne 0) { exit 1 }
+      - name: Zip
+        shell: pwsh
+        run: |
+          Copy-Item "packaging\READ ME FIRST.txt" "dist\Equestria Atlas\"
+          Compress-Archive -Path "dist\Equestria Atlas" -DestinationPath "Equestria-Atlas-windows.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Equestria-Atlas-windows
+          path: Equestria-Atlas-windows.zip
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          name: Equestria Atlas ${{ github.ref_name }}
+          body: |
+            **Windows (10 / 11):** download `Equestria-Atlas-windows.zip`, right-click > Extract All, open the folder
+            and double-click `Equestria Atlas.exe`. If Windows says "Windows protected your PC", click
+            "More info", then "Run anyway".
+
+            Progress is saved automatically. Controls and tips are in `READ ME FIRST.txt` inside the zip.
+          files: Equestria-Atlas-windows.zip

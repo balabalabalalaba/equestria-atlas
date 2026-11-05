@@ -1,0 +1,2531 @@
+[
+ {
+  "id": "intro",
+  "start_s": 0.0,
+  "end_s": 14.4,
+  "bars": 6,
+  "mood": "overture (dawn)",
+  "key": "D major",
+  "tempo_bpm": 100,
+  "start_bar": 0,
+  "key_centres": [
+   "D"
+  ],
+  "start_frame": 0,
+  "end_frame": 432,
+  "start_sample": 0,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Dadd9",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 72
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Gmaj9",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "A7sus4",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "D",
+    "local_frame": 288
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "G",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "star",
+    "bar": 1,
+    "beat": 3.0,
+    "desc": "shooting star: soft falling glock sparkle (beat 3)",
+    "time_s": 1.2,
+    "frame": 36,
+    "local_frame": 36
+   },
+   {
+    "name": "title",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "TITLE DROP: boom + crash + shimmer; letter plings (glock) on every 8th: local frames 144,153,...,216 (9 letters, the 9th on the bar-4 downbeat)",
+    "time_s": 4.8,
+    "frame": 144,
+    "local_frame": 144
+   },
+   {
+    "name": "dawn",
+    "bar": 4,
+    "beat": 1.0,
+    "desc": "dawn light sweeps the map: rising arpeggio build + snare roll into bar 5",
+    "time_s": 7.2,
+    "frame": 216,
+    "local_frame": 216
+   },
+   {
+    "name": "prompt",
+    "bar": 5,
+    "beat": 1.0,
+    "desc": "BEGIN JOURNEY prompt: blip on every beat (288, 306, 324, 342)",
+    "time_s": 9.6,
+    "frame": 288,
+    "local_frame": 288
+   },
+   {
+    "name": "liftoff",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "LIFTOFF: riser lands, pop (tick + blip + soft cymbal), whoosh-up glock glissando",
+    "time_s": 12.0,
+    "frame": 360,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "canterlot",
+  "start_s": 14.4,
+  "end_s": 31.2,
+  "bars": 7,
+  "mood": "regal fanfare (dawn)",
+  "key": "D major",
+  "tempo_bpm": 100,
+  "start_bar": 6,
+  "key_centres": [
+   "D"
+  ],
+  "start_frame": 432,
+  "end_frame": 936,
+  "start_sample": 691200,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Gmaj7",
+    "local_frame": 0
+   },
+   {
+    "bar": 1,
+    "beat": 3.0,
+    "chord": "Em7",
+    "local_frame": 36
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "A7sus4",
+    "local_frame": 144
+   },
+   {
+    "bar": 3,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 180
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "D",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 288
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 396
+   },
+   {
+    "bar": 7,
+    "beat": 1.0,
+    "chord": "Gmaj7",
+    "local_frame": 432
+   },
+   {
+    "bar": 7,
+    "beat": 3.0,
+    "chord": "A",
+    "local_frame": 468
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 18.6,
+    "frame": 558,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 19.2,
+    "frame": 576,
+    "local_frame": 144
+   },
+   {
+    "name": "sunrise",
+    "bar": 4,
+    "beat": 1.0,
+    "desc": "SUNRISE: reverse swell lands on crash + boom; the Atlas Theme in full brass",
+    "time_s": 21.6,
+    "frame": 648,
+    "local_frame": 216
+   }
+  ]
+ },
+ {
+  "id": "cloudsdale",
+  "start_s": 31.2,
+  "end_s": 45.6,
+  "bars": 6,
+  "mood": "airy, soaring (dawn)",
+  "key": "D major (-> G)",
+  "tempo_bpm": 100,
+  "start_bar": 13,
+  "key_centres": [
+   "D"
+  ],
+  "start_frame": 936,
+  "end_frame": 1368,
+  "start_sample": 1497600,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Dmaj9",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Gmaj7",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "F#m7",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "F#m7",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "D7",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 35.4,
+    "frame": 1062,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 36.0,
+    "frame": 1080,
+    "local_frame": 144
+   },
+   {
+    "name": "rainbow",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "RAINBOW: fast glissando sparkle (glock run up, 360-369) + shimmer",
+    "time_s": 43.2,
+    "frame": 1296,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "ponyville",
+  "start_s": 45.6,
+  "end_s": 60.0,
+  "bars": 6,
+  "mood": "cozy folk (morning)",
+  "key": "G major",
+  "tempo_bpm": 100,
+  "start_bar": 19,
+  "key_centres": [
+   "G"
+  ],
+  "start_frame": 1368,
+  "end_frame": 1800,
+  "start_sample": 2188800,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Cadd9",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "D7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "D7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "G",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "F",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "C",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "D7",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 49.8,
+    "frame": 1494,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 50.4,
+    "frame": 1512,
+    "local_frame": 144
+   },
+   {
+    "name": "train",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "TRAIN: two-note whistle (G5 then E5, \"whoo-whooo\") at 360 and 378; chugging shaker",
+    "time_s": 57.6,
+    "frame": 1728,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "sweetapple",
+  "start_s": 60.0,
+  "end_s": 72.0,
+  "bars": 5,
+  "mood": "country hoedown (morning)",
+  "key": "G major",
+  "tempo_bpm": 100,
+  "start_bar": 25,
+  "key_centres": [
+   "G"
+  ],
+  "start_frame": 1800,
+  "end_frame": 2160,
+  "start_sample": 2880000,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "G7",
+    "local_frame": 108
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "C",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "Em7",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "D7",
+    "local_frame": 324
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 64.2,
+    "frame": 1926,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 64.8,
+    "frame": 1944,
+    "local_frame": 144
+   },
+   {
+    "name": "zap",
+    "bar": 5,
+    "beat": 1.0,
+    "desc": "ZAP: zappy rainbow arpeggio (pulse 32nds up and back down, 288-323) + laser zap",
+    "time_s": 69.6,
+    "frame": 2088,
+    "local_frame": 288
+   }
+  ]
+ },
+ {
+  "id": "everfree",
+  "start_s": 72.0,
+  "end_s": 86.4,
+  "bars": 6,
+  "mood": "mysterious (morning)",
+  "key": "E minor (relative of G)",
+  "tempo_bpm": 100,
+  "start_bar": 30,
+  "key_centres": [
+   "G"
+  ],
+  "start_frame": 2160,
+  "end_frame": 2592,
+  "start_sample": 3456000,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Cmaj7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "B7",
+    "local_frame": 108
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Emadd9",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "C",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "B7",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "B7b9",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "B7",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 76.2,
+    "frame": 2286,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 76.8,
+    "frame": 2304,
+    "local_frame": 144
+   },
+   {
+    "name": "glimpse",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "GLIMPSE: eerie B7b9 chord stab on the downbeat (e-piano + bell, reverse swell into it)",
+    "time_s": 84.0,
+    "frame": 2520,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "heartland",
+  "start_s": 86.4,
+  "end_s": 100.8,
+  "bars": 6,
+  "mood": "adventurous (morning)",
+  "key": "G major",
+  "tempo_bpm": 100,
+  "start_bar": 36,
+  "key_centres": [
+   "G"
+  ],
+  "start_frame": 2592,
+  "end_frame": 3024,
+  "start_sample": 4147200,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Cmaj7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "D7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "D7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 144
+   },
+   {
+    "bar": 3,
+    "beat": 3.0,
+    "chord": "D7",
+    "local_frame": 180
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "G/B",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "C",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "D7sus4",
+    "local_frame": 324
+   },
+   {
+    "bar": 5,
+    "beat": 4.0,
+    "chord": "D7",
+    "local_frame": 342
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "C",
+    "local_frame": 396
+   },
+   {
+    "bar": 6,
+    "beat": 4.0,
+    "chord": "D",
+    "local_frame": 414
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 90.6,
+    "frame": 2718,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 91.2,
+    "frame": 2736,
+    "local_frame": 144
+   },
+   {
+    "name": "cut2",
+    "bar": 4,
+    "beat": 3.0,
+    "desc": "postcard cut (cut2): crash + boom on the beat (cloud pass)",
+    "time_s": 94.8,
+    "frame": 2844,
+    "local_frame": 252
+   },
+   {
+    "name": "cut3",
+    "bar": 5,
+    "beat": 4.0,
+    "desc": "postcard cut (cut3): crash + boom on the beat (cloud pass)",
+    "time_s": 97.8,
+    "frame": 2934,
+    "local_frame": 342
+   }
+  ]
+ },
+ {
+  "id": "rainbowfalls",
+  "start_s": 100.8,
+  "end_s": 112.8,
+  "bars": 5,
+  "mood": "sporty, bright (morning)",
+  "key": "G major (-> A)",
+  "tempo_bpm": 100,
+  "start_bar": 42,
+  "key_centres": [
+   "G"
+  ],
+  "start_frame": 3024,
+  "end_frame": 3384,
+  "start_sample": 4838400,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "G",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "C",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "D7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "D7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "G",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "C",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "D",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Am7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "E7",
+    "local_frame": 324
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 105.0,
+    "frame": 3150,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 105.6,
+    "frame": 3168,
+    "local_frame": 144
+   },
+   {
+    "name": "trestle",
+    "bar": 4,
+    "beat": 1.0,
+    "desc": "TRESTLE: crash + boom + brass stab (the train crosses the trestle)",
+    "time_s": 108.0,
+    "frame": 3240,
+    "local_frame": 216
+   }
+  ]
+ },
+ {
+  "id": "manehattan",
+  "start_s": 112.8,
+  "end_s": 129.6,
+  "bars": 7,
+  "mood": "big-city swing (noon peak)",
+  "key": "A major",
+  "tempo_bpm": 100,
+  "start_bar": 47,
+  "key_centres": [
+   "A"
+  ],
+  "start_frame": 3384,
+  "end_frame": 3888,
+  "start_sample": 5414400,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Dadd9",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "E7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "E7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Amaj7",
+    "local_frame": 144
+   },
+   {
+    "bar": 3,
+    "beat": 3.0,
+    "chord": "F#7",
+    "local_frame": 180
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "E7",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "F#m7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "Dmaj7",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "E7",
+    "local_frame": 396
+   },
+   {
+    "bar": 7,
+    "beat": 1.0,
+    "chord": "Dmaj7",
+    "local_frame": 432
+   },
+   {
+    "bar": 7,
+    "beat": 3.0,
+    "chord": "C#7",
+    "local_frame": 468
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 117.0,
+    "frame": 3510,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 117.6,
+    "frame": 3528,
+    "local_frame": 144
+   },
+   {
+    "name": "bridge",
+    "bar": 7,
+    "beat": 1.0,
+    "desc": "BRIDGE: brass shout + crash + boom (the big suspension bridge)",
+    "time_s": 127.2,
+    "frame": 3816,
+    "local_frame": 432
+   }
+  ]
+ },
+ {
+  "id": "eastcoast",
+  "start_s": 129.6,
+  "end_s": 144.0,
+  "bars": 6,
+  "mood": "maritime shuffle",
+  "key": "A major",
+  "tempo_bpm": 100,
+  "start_bar": 54,
+  "key_centres": [
+   "A"
+  ],
+  "start_frame": 3888,
+  "end_frame": 4320,
+  "start_sample": 6220800,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "F#m7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "E7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "E7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Dmaj7",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "C#m7",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "E7",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Dmaj7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "C#7",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 133.8,
+    "frame": 4014,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 134.4,
+    "frame": 4032,
+    "local_frame": 144
+   },
+   {
+    "name": "bell",
+    "bar": 3,
+    "beat": 3.0,
+    "desc": "BELL: deep harbour-bell stroke (A3) on beat 3, rings ~4 s",
+    "time_s": 135.6,
+    "frame": 4068,
+    "local_frame": 180
+   }
+  ]
+ },
+ {
+  "id": "griffonstone",
+  "start_s": 144.0,
+  "end_s": 156.0,
+  "bars": 5,
+  "mood": "rugged minor",
+  "key": "F# minor (relative of A)",
+  "tempo_bpm": 100,
+  "start_bar": 60,
+  "key_centres": [
+   "A"
+  ],
+  "start_frame": 4320,
+  "end_frame": 4680,
+  "start_sample": 6912000,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "F#madd9",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "C#7",
+    "local_frame": 108
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "F#m",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "D",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "C#7",
+    "local_frame": 324
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 148.2,
+    "frame": 4446,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 148.8,
+    "frame": 4464,
+    "local_frame": 144
+   },
+   {
+    "name": "gust",
+    "bar": 5,
+    "beat": 1.0,
+    "desc": "GUST: wind whoosh (noise riser into a long downward sweep) + soft cymbal",
+    "time_s": 153.6,
+    "frame": 4608,
+    "local_frame": 288
+   }
+  ]
+ },
+ {
+  "id": "dragonlands",
+  "start_s": 156.0,
+  "end_s": 170.4,
+  "bars": 6,
+  "mood": "heavy riff",
+  "key": "F# minor (relative of A)",
+  "tempo_bpm": 100,
+  "start_bar": 65,
+  "key_centres": [
+   "A"
+  ],
+  "start_frame": 4680,
+  "end_frame": 5112,
+  "start_sample": 7488000,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "F#m",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Dmaj7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "C#7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "C#7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "F#m",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "D",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "E",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "F#m",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "D",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "F#m",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "C#7",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 160.2,
+    "frame": 4806,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 160.8,
+    "frame": 4824,
+    "local_frame": 144
+   },
+   {
+    "name": "erupt",
+    "bar": 5,
+    "beat": 1.0,
+    "desc": "ERUPT: riser into boom + crash (the volcano blows) on the downbeat",
+    "time_s": 165.6,
+    "frame": 4968,
+    "local_frame": 288
+   }
+  ]
+ },
+ {
+  "id": "mountaris",
+  "start_s": 170.4,
+  "end_s": 187.2,
+  "bars": 7,
+  "mood": "mediterranean -> underwater",
+  "key": "A major (-> F)",
+  "tempo_bpm": 100,
+  "start_bar": 71,
+  "key_centres": [
+   "A"
+  ],
+  "start_frame": 5112,
+  "end_frame": 5616,
+  "start_sample": 8179200,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "F#m7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Dadd9",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "E7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "E7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "A",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "F#m7",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "D",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "E7",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "F#m9",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "Dmaj9",
+    "local_frame": 396
+   },
+   {
+    "bar": 7,
+    "beat": 1.0,
+    "chord": "Dmaj9",
+    "local_frame": 432
+   },
+   {
+    "bar": 7,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 468
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 174.6,
+    "frame": 5238,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 175.2,
+    "frame": 5256,
+    "local_frame": 144
+   },
+   {
+    "name": "dive",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "DIVE: splash (cymbal + boom + noise sweep down) and filter drop: the last 2 bars are underwater (the whole band low-passed, more echo)",
+    "time_s": 182.4,
+    "frame": 5472,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "klugetown",
+  "start_s": 187.2,
+  "end_s": 201.6,
+  "bars": 6,
+  "mood": "ragtag bazaar (golden hour)",
+  "key": "D harmonic minor (relative of F)",
+  "tempo_bpm": 100,
+  "start_bar": 78,
+  "key_centres": [
+   "F"
+  ],
+  "start_frame": 5616,
+  "end_frame": 6048,
+  "start_sample": 8985600,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Gm7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Bbmaj7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 108
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Dm",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Gm",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Dm",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "Gm",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Bb",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 191.4,
+    "frame": 5742,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 192.0,
+    "frame": 5760,
+    "local_frame": 144
+   },
+   {
+    "name": "airship",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "AIRSHIP: low horn blast (Bb2 + F3) + boom + soft cymbal + propeller whoosh",
+    "time_s": 199.2,
+    "frame": 5976,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "badlands",
+  "start_s": 201.6,
+  "end_s": 213.6,
+  "bars": 5,
+  "mood": "dark -> blooming",
+  "key": "D minor -> F major",
+  "tempo_bpm": 100,
+  "start_bar": 84,
+  "key_centres": [
+   "F"
+  ],
+  "start_frame": 6048,
+  "end_frame": 6408,
+  "start_sample": 9676800,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Dm",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Gm7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 108
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Dm",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "F",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Bbmaj9",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "Eb7b9",
+    "local_frame": 324
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 205.8,
+    "frame": 6174,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 206.4,
+    "frame": 6192,
+    "local_frame": 144
+   },
+   {
+    "name": "transform",
+    "bar": 4,
+    "beat": 1.0,
+    "desc": "TRANSFORM: crash + boom + shimmer; D minor blooms into radiant F major",
+    "time_s": 208.8,
+    "frame": 6264,
+    "local_frame": 216
+   },
+   {
+    "name": "tartarus",
+    "bar": 5,
+    "beat": 3.0,
+    "desc": "dark sting (Eb7b9: low power chord + boom + tom): the gates of Tartarus",
+    "time_s": 212.4,
+    "frame": 6372,
+    "local_frame": 324
+   }
+  ]
+ },
+ {
+  "id": "frontier",
+  "start_s": 213.6,
+  "end_s": 225.6,
+  "bars": 5,
+  "mood": "western twang (sunset)",
+  "key": "F major",
+  "tempo_bpm": 100,
+  "start_bar": 89,
+  "key_centres": [
+   "F"
+  ],
+  "start_frame": 6408,
+  "end_frame": 6768,
+  "start_sample": 10252800,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Bbadd9",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Gm7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "C7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "C7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Dm7",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Gm7",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "C7",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Bb",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "C7",
+    "local_frame": 324
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 217.8,
+    "frame": 6534,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 218.4,
+    "frame": 6552,
+    "local_frame": 144
+   },
+   {
+    "name": "whistle",
+    "bar": 5,
+    "beat": 1.0,
+    "desc": "WHISTLE: the whistle lead takes the tune at sunset",
+    "time_s": 223.2,
+    "frame": 6696,
+    "local_frame": 288
+   }
+  ]
+ },
+ {
+  "id": "laspegasus",
+  "start_s": 225.6,
+  "end_s": 240.0,
+  "bars": 6,
+  "mood": "showtime funk (dusk)",
+  "key": "F major (-> D)",
+  "tempo_bpm": 100,
+  "start_bar": 94,
+  "key_centres": [
+   "F"
+  ],
+  "start_frame": 6768,
+  "end_frame": 7200,
+  "start_sample": 10828800,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Bbmaj7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Gm7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "C7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "C7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Fmaj7",
+    "local_frame": 144
+   },
+   {
+    "bar": 3,
+    "beat": 3.0,
+    "chord": "Dm7",
+    "local_frame": 180
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Gm7",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "C7",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Dm7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "Bbmaj7",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Gm7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 396
+   },
+   {
+    "bar": 6,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 414
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 229.8,
+    "frame": 6894,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 230.4,
+    "frame": 6912,
+    "local_frame": 144
+   },
+   {
+    "name": "neon",
+    "bar": 4,
+    "beat": 1.0,
+    "desc": "NEON: rising brass-stab line on every 8th (216,225,...,279): one building per stab",
+    "time_s": 232.8,
+    "frame": 6984,
+    "local_frame": 216
+   },
+   {
+    "name": "fireworks",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "FIREWORKS: crash + boom + glock bursts on beats 1, 3 and 4 (360, 396, 414)",
+    "time_s": 237.6,
+    "frame": 7128,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "westcoast",
+  "start_s": 240.0,
+  "end_s": 254.4,
+  "bars": 6,
+  "mood": "lo-fi rain (night)",
+  "key": "D major",
+  "tempo_bpm": 100,
+  "start_bar": 100,
+  "key_centres": [
+   "D"
+  ],
+  "start_frame": 7200,
+  "end_frame": 7632,
+  "start_sample": 11520000,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Gmaj9",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Em9",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Dmaj9",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Bm9",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "Em9",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Gmaj9",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 324
+   },
+   {
+    "bar": 5,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 342
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Bm9",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "Gmaj9",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 244.2,
+    "frame": 7326,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 244.8,
+    "frame": 7344,
+    "local_frame": 144
+   },
+   {
+    "name": "moonrise",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "MOONRISE: gentle bell swell (soft reverse cymbal + bell + shimmer)",
+    "time_s": 252.0,
+    "frame": 7560,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "crystal",
+  "start_s": 254.4,
+  "end_s": 271.2,
+  "bars": 7,
+  "mood": "majestic shimmer (night peak)",
+  "key": "D major",
+  "tempo_bpm": 100,
+  "start_bar": 106,
+  "key_centres": [
+   "D"
+  ],
+  "start_frame": 7632,
+  "end_frame": 8136,
+  "start_sample": 12211200,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Gmaj9",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Em9",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "D",
+    "local_frame": 144
+   },
+   {
+    "bar": 3,
+    "beat": 3.0,
+    "chord": "A/C#",
+    "local_frame": 180
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "G",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Gmaj9",
+    "local_frame": 288
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "G",
+    "local_frame": 396
+   },
+   {
+    "bar": 7,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 432
+   },
+   {
+    "bar": 7,
+    "beat": 3.0,
+    "chord": "F#7",
+    "local_frame": 468
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 258.6,
+    "frame": 7758,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 259.2,
+    "frame": 7776,
+    "local_frame": 144
+   },
+   {
+    "name": "heart",
+    "bar": 5,
+    "beat": 1.0,
+    "desc": "HEART: heartbeat (boom + kick \"lub-dub\" on beats 1 and 3) + big shimmering chord",
+    "time_s": 264.0,
+    "frame": 7920,
+    "local_frame": 288
+   },
+   {
+    "name": "heart2",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "HEART2: heartbeat (boom + kick \"lub-dub\" on beats 1 and 3) + big shimmering chord",
+    "time_s": 266.4,
+    "frame": 7992,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "yakyakistan",
+  "start_s": 271.2,
+  "end_s": 285.6,
+  "bars": 6,
+  "mood": "stomping folk",
+  "key": "B minor (relative of D)",
+  "tempo_bpm": 100,
+  "start_bar": 113,
+  "key_centres": [
+   "D"
+  ],
+  "start_frame": 8136,
+  "end_frame": 8568,
+  "start_sample": 13017600,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "F#7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "F#7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Bm",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "G",
+    "local_frame": 216
+   },
+   {
+    "bar": 4,
+    "beat": 3.0,
+    "chord": "A",
+    "local_frame": 252
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Em",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "F#7",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 396
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 275.4,
+    "frame": 8262,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 276.0,
+    "frame": 8280,
+    "local_frame": 144
+   },
+   {
+    "name": "avalanche",
+    "bar": 5,
+    "beat": 1.0,
+    "desc": "AVALANCHE: crash + boom + tom roll + rumbling noise sweep (downbeat of bar 5)",
+    "time_s": 280.8,
+    "frame": 8424,
+    "local_frame": 288
+   }
+  ]
+ },
+ {
+  "id": "twosisters",
+  "start_s": 285.6,
+  "end_s": 302.4,
+  "bars": 7,
+  "mood": "lullaby -> midnight climax",
+  "key": "D major",
+  "tempo_bpm": 100,
+  "start_bar": 119,
+  "key_centres": [
+   "D"
+  ],
+  "start_frame": 8568,
+  "end_frame": 9072,
+  "start_sample": 13708800,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Gmaj7",
+    "local_frame": 0
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "Dmaj7",
+    "local_frame": 144
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 324
+   },
+   {
+    "bar": 5,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 342
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "D",
+    "local_frame": 360
+   },
+   {
+    "bar": 7,
+    "beat": 1.0,
+    "chord": "Bm7",
+    "local_frame": 432
+   },
+   {
+    "bar": 7,
+    "beat": 3.0,
+    "chord": "G",
+    "local_frame": 468
+   }
+  ],
+  "hits": [
+   {
+    "name": "arrive",
+    "bar": 2,
+    "beat": 4.0,
+    "desc": "ARRIVE: glock pling (tonic + fifth) + shimmer on beat 4 of the second flight bar; the reverse swell grows toward the reveal",
+    "time_s": 289.8,
+    "frame": 8694,
+    "local_frame": 126
+   },
+   {
+    "name": "reveal",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "REVEAL: riser lands, crash on the diorama downbeat; the regional colour layer is in",
+    "time_s": 290.4,
+    "frame": 8712,
+    "local_frame": 144
+   },
+   {
+    "name": "build",
+    "bar": 5,
+    "beat": 1.0,
+    "desc": "build-up: arpeggio + snare roll + riser toward midnight",
+    "time_s": 295.2,
+    "frame": 8856,
+    "local_frame": 288
+   },
+   {
+    "name": "midnight",
+    "bar": 6,
+    "beat": 1.0,
+    "desc": "MIDNIGHT: 12 bell strikes on triplet 8ths (local 360, 366, ..., 426) under the climax of the theme",
+    "time_s": 297.6,
+    "frame": 8928,
+    "local_frame": 360
+   }
+  ]
+ },
+ {
+  "id": "outro",
+  "start_s": 302.4,
+  "end_s": 319.2,
+  "bars": 7,
+  "mood": "finale",
+  "key": "D major -> E major",
+  "tempo_bpm": 100,
+  "start_bar": 126,
+  "key_centres": [
+   "D",
+   "E"
+  ],
+  "start_frame": 9072,
+  "end_frame": 9576,
+  "start_sample": 14515200,
+  "chords": [
+   {
+    "bar": 1,
+    "beat": 1.0,
+    "chord": "Em7",
+    "local_frame": 0
+   },
+   {
+    "bar": 1,
+    "beat": 3.0,
+    "chord": "A7",
+    "local_frame": 36
+   },
+   {
+    "bar": 2,
+    "beat": 1.0,
+    "chord": "G",
+    "local_frame": 72
+   },
+   {
+    "bar": 2,
+    "beat": 3.0,
+    "chord": "A7sus4",
+    "local_frame": 108
+   },
+   {
+    "bar": 2,
+    "beat": 4.0,
+    "chord": "A7",
+    "local_frame": 126
+   },
+   {
+    "bar": 3,
+    "beat": 1.0,
+    "chord": "D",
+    "local_frame": 144
+   },
+   {
+    "bar": 3,
+    "beat": 3.0,
+    "chord": "B7sus4",
+    "local_frame": 180
+   },
+   {
+    "bar": 3,
+    "beat": 4.0,
+    "chord": "B7",
+    "local_frame": 198
+   },
+   {
+    "bar": 4,
+    "beat": 1.0,
+    "chord": "E",
+    "local_frame": 216
+   },
+   {
+    "bar": 5,
+    "beat": 1.0,
+    "chord": "C#m7",
+    "local_frame": 288
+   },
+   {
+    "bar": 5,
+    "beat": 3.0,
+    "chord": "A",
+    "local_frame": 324
+   },
+   {
+    "bar": 6,
+    "beat": 1.0,
+    "chord": "F#m7",
+    "local_frame": 360
+   },
+   {
+    "bar": 6,
+    "beat": 3.0,
+    "chord": "B7",
+    "local_frame": 396
+   },
+   {
+    "bar": 7,
+    "beat": 1.0,
+    "chord": "Eadd9",
+    "local_frame": 432
+   }
+  ],
+  "hits": [
+   {
+    "name": "route",
+    "bar": 1,
+    "beat": 1.0,
+    "desc": "route draws itself: blip on every 8th, bars 1-2 (local frames 0, 9, 18, ... 135)",
+    "time_s": 302.4,
+    "frame": 9072,
+    "local_frame": 0
+   },
+   {
+    "name": "complete",
+    "bar": 3,
+    "beat": 1.0,
+    "desc": "MAP COMPLETE stamp: crash + boom + clap + brass chord",
+    "time_s": 307.2,
+    "frame": 9216,
+    "local_frame": 144
+   },
+   {
+    "name": "keychange",
+    "bar": 4,
+    "beat": 1.0,
+    "desc": "KEY CHANGE up a tone (E major): last theme statement; credits one card per bar",
+    "time_s": 309.6,
+    "frame": 9288,
+    "local_frame": 216
+   },
+   {
+    "name": "final",
+    "bar": 7,
+    "beat": 1.0,
+    "desc": "FINAL Eadd9 chord on the last downbeat; decays to digital silence exactly at the last sample",
+    "time_s": 316.8,
+    "frame": 9504,
+    "local_frame": 432
+   }
+  ]
+ }
+]

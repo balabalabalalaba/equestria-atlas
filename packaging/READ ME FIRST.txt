@@ -1,0 +1,69 @@
+EQUESTRIA ATLAS - an explorable pixel-art world
+================================================
+
+Fly the explorer's balloon over Equestria, land wherever you like, help the places you find,
+and make friends with the other balloons in the sky. Progress is saved automatically.
+
+
+HOW TO START
+------------
+Mac (Apple Silicon: M1 or newer)
+  1. Unzip, then drag "Equestria Atlas" into your Applications folder (or anywhere).
+  2. The first time, RIGHT-CLICK the app and choose "Open", then "Open" again.
+     (The app is not from the App Store, so a normal double-click is blocked the first time.
+     If it still refuses: System Settings > Privacy & Security > "Open Anyway".)
+
+Windows (10 or 11)
+  1. Unzip the whole folder (right-click > Extract All).
+  2. Double-click "Equestria Atlas.exe" inside it.
+  3. If Windows shows "Windows protected your PC": click "More info", then "Run anyway".
+
+
+CONTROLS
+--------
+  Arrow keys / WASD   fly            SHIFT   go faster
+  SPACE               land / do something / pick up and deliver
+  ESC                 take off (in a place) / pause menu (on the map, also QUIT)
+  J  journal          M  map         P  postcard (photo album)
+  F  fullscreen       F12  screenshot
+A gamepad works too. If you click away to another window, the game pauses for you.
+
+
+BALLOONS WITH PERKS
+-------------------
+Stamps, helping places, races, photos and friends unlock new balloons (journal J, BALLOONS page). Each
+one has a perk while you wear it: a wider view through the fog, a compass to unfound places, a faster
+boost, flying faster at night, a clock that runs fast for sunset and night photos, and more.
+
+
+YOUR POSTCARDS
+--------------
+Every postcard you take with P is saved in your Pictures folder:
+  Mac:      Pictures > Equestria Atlas
+  Windows:  Pictures\Equestria Atlas
+To look at them in the game: press J (the journal) and turn to the PHOTOS page (the little picture
+tab) with LEFT / RIGHT. UP / DOWN choose a photo, SPACE shows it full screen, LEFT / RIGHT flip
+through them, ESC goes back. Press J right after taking a postcard and the journal opens on it.
+In the full-screen view, SPACE shows that photo's file in its folder.
+
+
+SENDING FEEDBACK
+----------------
+Anything you liked, found confusing, ugly or broken is useful!
+  - Press F12 to take a screenshot of the problem.
+  - Write down the place and the clock time shown in the top-left corner.
+Screenshots, saves and settings are in:
+  Mac:      ~/Library/Application Support/Equestria Atlas/game_shots
+            (in Finder: Go > Go to Folder..., paste the path)
+  Windows:  %APPDATA%\Equestria Atlas\game_shots
+            (paste into the File Explorer address bar)
+Send the screenshots with your notes.
+
+If the game ever closes by itself, please send the file crash.txt from that same folder.
+If the game does not start, run it once with --selftest (Mac: Terminal, Windows: Command
+Prompt) and send the file selftest.txt from the same folder:
+  Mac:      "/Applications/Equestria Atlas.app/Contents/MacOS/Equestria Atlas" --selftest
+  Windows:  "Equestria Atlas.exe" --selftest
+
+
+A free, non-commercial fan project. My Little Pony and Equestria belong to Hasbro.
