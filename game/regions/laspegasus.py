@@ -1050,8 +1050,11 @@ class LasPegasus(Region):
         else:
             c = bd.copy()
         daylight.relight(c.a, DAY_ART_H, self.g.hour, glow=False)
+        # the sea first, then the city: _no_sea inverts whole rows, so after _not_sky it would turn the
+        # towers' lower floors (below the horizon) back to their own colours and they would count as sky
+        _no_sea(c, sc.HORIZ + oys)
         _not_sky(c, _day_city(), -cx, oyp(cy, 1.0))     # (a navy facade at night matched the night sky)
-        return _no_sea(c, sc.HORIZ + oys)
+        return c
 
     def _sky_strip_film(self, f, cx, cy):
         """The backdrop's dusk/night gradient + afterglow, stars and the clock's moon on the crane offsets."""
@@ -1065,8 +1068,9 @@ class LasPegasus(Region):
             c = bd.copy()
         fx.stars(c, f, seed=16, n=int(18 + 70 * nt), region=(0, oys - 58, W, 146))
         _clock_moon(c, self.g.hour)
+        _no_sea(c, sc.HORIZ + oys)                      # (before the city: see _sky_strip_day)
         _not_sky(c, _lit_city()[0], -cx, oyp(cy, 1.0))  # the city: its dark facades are not the night sky
-        return _no_sea(c, sc.HORIZ + oys)
+        return c
 
     def _by_clock(self, day, film, keep=False):
         """The picture for the clock: day(), film() or both blended by day_k (each returns a new Canvas).

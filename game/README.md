@@ -49,6 +49,13 @@ on a Mac, `%APPDATA%\Equestria Atlas` on Windows) instead of `out/`.
 - **Windows**: a Windows app must be built on a Windows PC. Run `bash packaging/make_source_zip.sh` here
   (-> `dist/Equestria-Atlas-source.zip`, ~60 MB), copy it to a Windows PC with Python 3.11+ installed,
   unzip, and double-click `packaging\build_windows.bat` -> `dist\Equestria-Atlas-windows.zip`.
+- **GitHub (Windows, for friends)**: https://github.com/balabalabalalaba/equestria-atlas (public). Friends download
+  https://github.com/balabalabalalaba/equestria-atlas/releases/latest/download/Equestria-Atlas-windows.zip (one click;
+  unzip, double-click `Equestria Atlas.exe`). The repo holds only the game (copied by `packaging/github_sync.sh`,
+  with the repo's README / build workflow from `packaging/github/`); GitHub Actions builds the Windows zip on a
+  Windows machine, runs `--selftest`, and publishes it as a Release for every version tag. To update:
+  `bash packaging/github_sync.sh "what changed"`, then in `release/equestria-atlas`: `git push`, and
+  `git tag v1.1 && git push origin v1.1`. (gh CLI: `release/gh_download/.../bin/gh`, signed in.)
 - `READ ME FIRST.txt` (in both zips) explains how to open the app, the controls and how to send feedback.
 - `--selftest` (any build) loads every place, draws a frame in each at three hours and builds every sound,
   and writes `selftest.txt` next to the saves: the check for a fresh build or a friend whose game won't start.
@@ -649,6 +656,16 @@ Tools: `tools/claude_light_survey.py` (sheets of every place at the ten hours, `
 `tools/claude_light_props.py` (the trouble props), `tools/claude_light_smoke.py` (every place at five hours:
 errors and ms), `tools/claude_light_hitch.py --areas` (the clock running through dusk / dawn in every area:
 slow frames and light steps). Notes per place: `out/light_audit/work/<place>/bugs.md`.
+
+**Fix 2026-11-06: Las Pegasus towers cut in half.** On the strip, the lower floors of every casino tower were
+repainted as sky (flat pale blue by day, night sky with stars at night: the towers floated over a void). The
+strip's sky hooks (`_sky_strip_day`, `_sky_strip_film`) stamped the city out by inverting its colours and only
+then inverted every row below the horizon (`_no_sea`), which turned the towers' lower floors back to their own
+colours, so they matched the frame and counted as open sky. Now the sea is masked first, then the city. The
+light survey missed it because the tower bases looked like sky-coloured glass by day and its sheets never lit
+the neon. New check: `tools/claude_skymask_check.py` paints the repaint mask magenta over every area of every
+place (lasting set-pieces on and off: Crystal Empire `lit`, Changeling Kingdom `bloom`, Las Pegasus `neon`) at
+13:30 and 22:00: magenta must sit on open sky only (all 20 places pass). The intro video was re-rendered.
 
 ## Smooth motion
 
