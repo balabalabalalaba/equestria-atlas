@@ -13,7 +13,7 @@ places, help each one with the goods it needs, race through rainbow rings, make 
 snap postcards for your photo book, and watch the world turn from morning to golden hour to a night full of
 lanterns, neon and auroras.
 
-【Video】 https://www.bilibili.com/video/BV1qF4i6AEfn/?share_source=copy_web&vd_source=092495a15b67cb6f1d1d69015f810a75
+【Video】 https://www.bilibili.com/video/BV1Ny4v65EDd/?share_source=copy_web&vd_source=092495a15b67cb6f1d1d69015f810a75
 
 ### Play it
 
@@ -69,7 +69,7 @@ Every version tag (`git tag v1.1 && git push origin v1.1`) builds the Windows zi
 
 一款温馨的像素风热气球冒险游戏。驾驶探险家的热气球，飞越一张手绘的世界地图，降落在 20 个会动的地方。帮每个地方送去它需要的东西，穿过彩虹圈比赛，和天上的热气球交朋友，随手拍明信片放进相册。世界时钟一直在走，从清晨到黄昏，再到满是灯笼、霓虹和极光的夜晚。
 
-【宣传片】 https://www.bilibili.com/video/BV1qF4i6AEfn/?share_source=copy_web&vd_source=092495a15b67cb6f1d1d69015f810a75
+【宣传片】https://www.bilibili.com/video/BV1Ny4v65EDd/?share_source=copy_web&vd_source=092495a15b67cb6f1d1d69015f810a75
 ### 下载和游玩
 
 1. 下载 **[Equestria-Atlas-windows.zip](https://github.com/balabalabalalaba/equestria-atlas/releases/latest/download/Equestria-Atlas-windows.zip)**（Windows 10 / 11）。
