@@ -1,17 +1,24 @@
-# Equestria Atlas
+# Equestria Atlas · 小马国地图集
+
+[English](#english) · [中文](#中文)
+
+**[Download the game for Windows / 下载 Windows 版](https://github.com/balabalabalalaba/equestria-atlas/releases/latest/download/Equestria-Atlas-windows.zip)** (Windows 10 / 11)
+
+---
+
+## English
 
 A cozy pixel-art balloon adventure. Fly the explorer's balloon over a hand-drawn world map, land in 20 living
 places, help each one with the goods it needs, race through rainbow rings, make friends with the other balloons,
 snap postcards for your photo book, and watch the world turn from morning to golden hour to a night full of
 lanterns, neon and auroras.
 
-## Play it
+### Play it
 
-**[Download the game for Windows](../../releases/latest/download/Equestria-Atlas-windows.zip)** (Windows 10 / 11)
-
-1. Right-click the downloaded `Equestria-Atlas-windows.zip` > *Extract All*.
-2. Open the folder and double-click `Equestria Atlas.exe`.
-3. The first time Windows may say "Windows protected your PC": click *More info*, then *Run anyway* (the game
+1. Download **[Equestria-Atlas-windows.zip](https://github.com/balabalabalalaba/equestria-atlas/releases/latest/download/Equestria-Atlas-windows.zip)**.
+2. Right-click the downloaded `Equestria-Atlas-windows.zip` > *Extract All*.
+3. Open the folder and double-click `Equestria Atlas.exe`.
+4. The first time Windows may say "Windows protected your PC": click *More info*, then *Run anyway* (the game
    is not signed by a big publisher).
 
 No installation is needed and nothing else has to be downloaded. Progress is saved automatically.
@@ -27,12 +34,25 @@ No installation is needed and nothing else has to be downloaded. Progress is sav
 
 A gamepad works too. More tips are in `READ ME FIRST.txt` inside the zip.
 
-## About
+### What's in it
+
+- **20 places**, each with its own colours, buildings, weather and lights: waterfalls flow, windmills turn,
+  flags wave and windows light up.
+- **A world clock**: a day in the game lasts 24 real minutes (an hour a minute). The light follows the hour,
+  from dawn through noon and golden hour to night, when lamps, lanterns, neon and the northern aurora come on.
+- **Help the places**: each one has a small trouble (wilted flowers, a dark lamp, an empty market...). Fetch the
+  goods from the place that has plenty, bring them over, and the place throws a festival.
+- **Friends and races**: 15 balloon friends to meet and 4 rainbow-ring courses on the world map.
+- **Postcards**: press P anywhere and look at them later in the journal's photo book (J > PHOTOS).
+- **Collect**: 18 badges and 16 balloon patterns, each with a perk of its own.
+- **Original chiptune score**, with a day and a night arrangement that follow the clock.
+
+### About
 
 A fan-made, non-commercial project: all art and music are original, made with a small Python pixel engine
 (numpy, pygame). Landscapes only, no characters.
 
-## Building it yourself
+### Building it yourself
 
 Python 3.11 or newer, then:
 
@@ -40,3 +60,58 @@ Python 3.11 or newer, then:
 - Or run it from source: `pip install -r packaging/requirements.txt`, then `python game/play.py`
 
 Every version tag (`git tag v1.1 && git push origin v1.1`) builds the Windows zip on GitHub and publishes it as a Release.
+
+---
+
+## 中文
+
+一款温馨的像素风热气球冒险游戏。驾驶探险家的热气球，飞越一张手绘的世界地图，降落在 20 个会动的地方。
+帮每个地方送去它需要的东西，穿过彩虹圈比赛，和天上的热气球交朋友，随手拍明信片放进相册。世界时钟一直在走，
+从清晨到黄昏，再到满是灯笼、霓虹和极光的夜晚。
+
+### 下载和游玩
+
+1. 下载 **[Equestria-Atlas-windows.zip](https://github.com/balabalabalalaba/equestria-atlas/releases/latest/download/Equestria-Atlas-windows.zip)**（Windows 10 / 11）。
+2. 右键下载好的 `Equestria-Atlas-windows.zip`，选“全部解压缩”。
+3. 打开解压出来的文件夹，双击 `Equestria Atlas.exe`。
+4. 第一次打开时 Windows 可能提示“Windows 已保护你的电脑”：点“更多信息”，再点“仍要运行”
+   （因为这个游戏没有大公司的数字签名）。
+
+不用安装，也不用再下载别的东西，进度会自动保存。游戏里的文字是英文，但大部分都用图标表示，看图就能玩。
+
+| 按键 | 作用 |
+|---|---|
+| 方向键 / WASD | 飞行 |
+| SHIFT | 加速 |
+| 空格 | 降落、触发机关、取货和送货 |
+| ESC | 起飞（在地点里）/ 暂停菜单（在地图上） |
+| J / M / P | 日记、总览地图、拍明信片 |
+| F | 全屏 |
+
+也可以用手柄玩。压缩包里的 `READ ME FIRST.txt` 有更多小提示（英文）。
+
+### 游戏内容
+
+- **20 个地方**：每个地方都有自己的配色、建筑、天气和灯光。瀑布在流，风车在转，旗子在飘，窗户会亮。
+- **世界时钟**：游戏里一天等于现实 24 分钟（一分钟一小时）。光线跟着时间变，从清晨、正午、黄昏到深夜，
+  路灯、灯笼、霓虹和北方的极光会在夜里亮起来。
+- **帮助各地**：每个地方都有一个小麻烦（花坛枯了、灯坏了、集市空了……）。去有货的地方取货，送过去修好，
+  那里就会办起节日。
+- **交朋友和比赛**：天上有 15 只热气球朋友，世界地图上有 4 条彩虹圈赛道。
+- **明信片**：按 P 随手拍一张，以后在日记的相册里翻看（J → PHOTOS）。
+- **收集**：18 枚徽章，16 种热气球花色，每种花色都有自己的特长。
+- **原创芯片音乐**：白天和夜晚各有一套编曲，跟着时钟交替。
+
+### 关于
+
+粉丝自制的非商业作品。所有美术和音乐都是原创，用一个小小的 Python 像素引擎（numpy、pygame）制作。
+只有风景，没有角色出场。
+
+### 自己构建
+
+需要 Python 3.11 或更新版本，然后：
+
+- Windows：双击 `packaging\build_windows.bat`（生成 `dist\Equestria-Atlas-windows.zip`）
+- 或者直接从源码运行：`pip install -r packaging/requirements.txt`，然后 `python game/play.py`
+
+每打一个版本标签（`git tag v1.1 && git push origin v1.1`），GitHub 就会自动构建 Windows 压缩包并发布成一个 Release。
