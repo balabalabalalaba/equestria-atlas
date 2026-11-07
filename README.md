@@ -1,6 +1,6 @@
 # Equestria Atlas · 小马利亚地图集
 
-[![downloads](https://img.shields.io/github/downloads/balabalabalalaba/equestria-atlas/total?label=downloads%20%2F%20%E4%B8%8B%E8%BD%BD&color=ff69b4)](https://github.com/balabalabalalaba/equestria-atlas/releases)
+[![downloads](https://img.shields.io/github/downloads/balabalabalalaba/equestria-atlas/total?label=downloads%20%2F%20%E4%B8%8B%E8%BD%BD&color=ff69b4)](https://github.com/balabalabalalaba/equestria-atlas/releases) [![video views](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.bilibili.com%2Fx%2Fweb-interface%2Fview%3Fbvid%3DBV1Ny4v65EDd&query=%24.data.stat.view&label=video%20views%20%2F%20%E6%92%AD%E6%94%BE&logo=bilibili&logoColor=white&color=00a1d6)](https://www.bilibili.com/video/BV1Ny4v65EDd/)
 
 [English](#english) · [中文](#中文)
 
