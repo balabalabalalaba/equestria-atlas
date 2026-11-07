@@ -1,5 +1,7 @@
 # Equestria Atlas · 小马利亚地图集
 
+[![downloads](https://img.shields.io/github/downloads/balabalabalalaba/equestria-atlas/total?label=downloads%20%2F%20%E4%B8%8B%E8%BD%BD&color=ff69b4)](https://github.com/balabalabalalaba/equestria-atlas/releases)
+
 [English](#english) · [中文](#中文)
 
 **[Download the game for Windows / 下载 Windows 版](https://github.com/balabalabalalaba/equestria-atlas/releases/latest/download/Equestria-Atlas-windows.zip)** (Windows 10 / 11)
