@@ -53,6 +53,9 @@ IRIS_FRAMES = 14
 START = 'canterlot'
 RING_TS = (0.3, 0.55, 0.8)       # rainbow rings along every leg of the tour route (bezier t)
 RING_REACH, RING_RESPAWN = 10, 450
+RING_UP = 34                     # a map ring floats this far above its ground point (the route)
+RING_RX, RING_RY = 10, 8         # hit ellipse (half axes) around the ring's centre, for the envelope's centre
+MAP_ENVELOPE = 14                # the map balloon ('m'): its envelope centre above the sprite's anchor
 RING_BOOST = 4.4                 # speed (px / step) a ring flings the balloon at; it eases back down
 # friendly sky traffic: other (crewless) balloons drifting over the map: (place, pattern, size, phase)
 TRAFFIC = [('cloudsdale', 'sky', 's', 0.0), ('manehattan', 'royal', 's', 1.3), ('appleloosa', 'sunset', 'm', 2.1),
@@ -939,12 +942,21 @@ class MapMode:
         self.cy += (y + self.look_y - self.cy) * CAM_EASE
         self._clamp_cam()
 
+    def envelope(self):
+        """World px of the balloon's envelope centre (it flies `alt` above its shadow, by)."""
+        return self.bx, self.by - self.alt - MAP_ENVELOPE
+
     def _rings(self):
+        # The envelope (the round part you steer through the ring) must meet the ring's centre. This
+        # used to compare the ground points (shadow vs route) in a 10 px box, which put the hit window
+        # 2 px low and lopsided: 12 px below the envelope's centre (down at the basket) but 8 above, so a
+        # ring flown into from above counted at the basket (GitHub issue #5).
         g = self.g
+        ex, ey = self.envelope()
         for i, (x, y) in enumerate(RINGS):
             if g.t - self.ring_t.get(i, -10 ** 6) < RING_RESPAWN:
                 continue
-            if abs(self.bx - x) < RING_REACH and abs(self.by - y) < RING_REACH:
+            if ((ex - x) / RING_RX) ** 2 + ((ey - (y - RING_UP)) / RING_RY) ** 2 < 1:
                 self.ring_t[i] = g.t
                 g.rings_flown.add(i)
                 self.hop_t = g.t
@@ -1120,7 +1132,7 @@ class MapMode:
             if not (-12 < sx < W + 12 and -50 < sy < H + 12):
                 continue
             a = t - self.ring_t.get(i, -10 ** 6)
-            ry = sy - 34 + int(round(math.sin(t * 0.08 + i) * 1.5))
+            ry = sy - RING_UP + int(round(math.sin(t * 0.08 + i) * 1.5))
             if a < 40:                                      # just flown through: it bursts
                 ui.burst(c, t, self.ring_t[i], sx, ry, ('red', 'orange', 'butter', 'leaf', 'sky', 'violet'),
                          n=24, seed=i, power=1.0, life=40, gravity=0.02)

@@ -7,7 +7,7 @@ Keys: arrows / WASD fly the balloon, SHIFT boost, SPACE / ENTER land (map) or se
 balloon is next to (in a place), ESC take off (in a place), close a screen, or pause (on the map),
 M overview map, J atlas journal (and the balloon wardrobe), P postcard snapshot (Pictures/Equestria Atlas;
 the journal's PHOTOS page shows them all, full screen with SPACE),
-F fullscreen, H hide / show the HUD (clean screenshots), F12 raw screenshot; quit from the pause menu (QUIT) or by closing the window. Gamepad: stick / d-pad fly, A (button 0) land / set off,
+F fullscreen, H hide / show the HUD (clean screenshots), F12 screenshot (Pictures/Equestria Atlas); quit from the pause menu (QUIT) or by closing the window. Gamepad: stick / d-pad fly, A (button 0) land / set off,
 B (1) take off, X (2) journal, Y (3) map, shoulders boost, Back (6) postcard, Start (7) pause.
 When the window loses focus the world freezes quietly (no menu over the view, so a screenshot tool
 catches the scenery) and runs on when the window is clicked again; ESC opens the pause menu.
@@ -446,6 +446,22 @@ class ShortcutKeys:
         s.cbSize = ctypes.sizeof(S)
         return s
 
+    def filter_keys_on(self):
+        """True when the player's Windows has Filter Keys switched ON (keys must be held before they count:
+        the balloon seems to stall and then move; holding right SHIFT 8 s used to switch it on, GitHub
+        issue #5). The game leaves it on (it is the player's setting) and says so in a toast."""
+        if not self.ok:
+            return False
+        try:
+            import ctypes
+            get, _put, n = self.SPI['filter']
+            st = self._struct(n)
+            if ctypes.windll.user32.SystemParametersInfoW(get, st.cbSize, ctypes.byref(st), 0):
+                return bool(st.dwFlags & self.ON)
+        except Exception:
+            pass
+        return False
+
     def disable(self):
         if not self.ok or self.saved is not None:
             return
@@ -574,6 +590,11 @@ def fit_scale():
     return max(2, min(int(dw * 0.92) // VIEW_W, int(dh * 0.88) // VIEW_H))
 
 
+FOCUS_CHECK = True          # a frozen game (window unfocused) runs on once its window has the focus (run)
+REBUILD_WINDOW = True       # a settings change makes a fresh window (see Display.apply); False: the old
+                            # in-place set_mode (kept for tools/claude_issue5_wintest.py to compare)
+
+
 class Display:
     """The window: (re)made from the settings' scale and fullscreen. Windowed, the window is the view
     times k. Fullscreen, the screen is the desktop size and the view is drawn at the largest whole scale
@@ -588,6 +609,7 @@ class Display:
         self.full = None
         self.vsync = True
         self.win = None                 # pygame._sdl2 Window wrapper of the display (see apply)
+        self._old_wins = []             # wrappers of windows a settings change replaced (kept alive)
         self.offset = (0, 0)
         self.apply()
 
@@ -610,6 +632,15 @@ class Display:
         if k == self.k and s.fullscreen == self.full:
             return
         flags = pygame.SCALED | (pygame.FULLSCREEN if s.fullscreen else 0)
+        if self.screen is not None and REBUILD_WINDOW:
+            # WINDOW / FULLSCREEN changed: close the window and open a fresh one. Calling set_mode again on
+            # the existing SCALED (renderer-backed, vsync) window could leave it showing the old picture
+            # on Windows: the game ran on behind a frozen view until it was restarted (GitHub issue #5)
+            if self.win is not None:        # (never dropped: a dropped wrapper would free the window
+                self._old_wins.append(self.win)     # that display.quit is about to close)
+            pygame.display.quit()
+            pygame.display.init()
+            self.win = None
         try:
             self.screen = pygame.display.set_mode(size, flags, vsync=1)
             self.vsync = True
@@ -628,6 +659,7 @@ class Display:
             except (ImportError, AttributeError, pygame.error):
                 pass
         self.k, self.full = k, s.fullscreen
+        pygame.display.set_caption('Equestria Atlas')
         calm_ime()                          # a new / changed window: keep the IME out of it (issue #1)
         self.size = (VIEW_W * k, VIEW_H * k)
         sw, sh = self.screen.get_size()
@@ -640,6 +672,19 @@ class Display:
         surf = pygame.image.frombuffer(buf, (buf.shape[1], buf.shape[0]), 'RGBX')
         self.screen.blit(surf, self.offset, pygame.Rect(sx, sy, self.size[0], self.size[1]))
         return surf
+
+
+def folder_label(path):
+    """A folder as a toast / the journal shows it: from the home folder, in caps, parts joined by ' / '
+    (the pixel font has no backslash), and only its last two parts when it would not fit the screen."""
+    home = os.path.expanduser('~')
+    try:
+        rel = os.path.relpath(path, home) if os.path.abspath(path).startswith(home) else path
+    except ValueError:                                  # (another drive on Windows)
+        rel = path
+    parts = [p for p in rel.replace('\\', '/').replace(os.sep, '/').split('/') if p and p != '.']
+    label = ' / '.join(parts).upper()
+    return label if len(label) <= 34 else ' / '.join(parts[-2:]).upper()
 
 
 def photo_dir():
@@ -797,8 +842,7 @@ def main():
     shots = os.path.join(user_dir(), 'game_shots')
     photos = photo_dir()
     home = os.path.expanduser('~')
-    game.photo_label = (os.path.relpath(photos, home) if photos.startswith(home) else photos).upper().replace(
-        os.sep, ' / ')
+    game.photo_label = folder_label(photos)
     game.photos.set_folders([photos, shots])      # the journal's PHOTOS page (earlier postcards are in shots)
     try:
         run(game, settings, args, audio, disp, clock, pads, shots, photos, applied)
@@ -838,6 +882,9 @@ def run(game, settings, args, audio, disp, clock, pads, shots, photos, applied):
     shortcuts = ShortcutKeys(os.path.join(user_dir(), 'shortcut_keys.json'))   # Windows' Sticky / Filter
     if pygame.key.get_focused():    # Keys shortcuts: off only while the window has the focus (issue #1)
         shortcuts.disable()
+    if shortcuts.filter_keys_on():
+        game.toasts.push('WINDOWS FILTER KEYS IS ON', 'IT DELAYS YOUR KEYS: SETTINGS > ACCESSIBILITY > KEYBOARD',
+                         'pad', urgent=True)
     calm_ime()
     while not game.quit:
         for ev in pygame.event.get():
@@ -898,6 +945,16 @@ def run(game, settings, args, audio, disp, clock, pads, shots, photos, applied):
                     if not away:
                         audio.pause_all(False)
                     last = time.perf_counter()
+        if away and FOCUS_CHECK and pygame.key.get_focused():
+            # the window HAS the focus: run on. A window made anew (WINDOW / FULLSCREEN changed) or resized
+            # can report the old window's focus loss after the new one's gain, which left the game frozen
+            # after a settings change (GitHub issue #5); the focus itself is the truth
+            away = False
+            shortcuts.disable()
+            if not hidden:
+                audio.pause_all(False)
+            last = time.perf_counter()
+            acc = held_alpha * STEP
         if hidden:                                      # minimised: no drawing, no clock; ~10 checks a second
             clock.tick(10)
             continue
@@ -945,7 +1002,7 @@ def run(game, settings, args, audio, disp, clock, pads, shots, photos, applied):
             except OSError as e:                        # Pictures not writable: the game's own folder
                 print('postcard: could not write to', photos, e, '- using', shots)
                 photos = shots
-                game.photo_label = shots.upper()
+                game.photo_label = folder_label(shots)
                 print('postcard saved:', postcard.save(game, photos))
             n = len(game.sounds)                     # this step's sounds have already played
             game.snapshot_flash()
@@ -953,11 +1010,27 @@ def run(game, settings, args, audio, disp, clock, pads, shots, photos, applied):
                 audio.play(name, gain, variant)          # and each step starts a new list: no replay)
         pressed.discard('postcard')
         if 'shot' in pressed:
+            # F12: the window's picture as it is (H hides the HUD first), without pausing anything. It goes
+            # to the postcards' folder (Pictures/Equestria Atlas), where players look for pictures to share,
+            # and a toast says so (GitHub issue #5: it used to land unannounced in the hidden app folder)
             pressed.discard('shot')
-            os.makedirs(shots, exist_ok=True)
-            path = os.path.join(shots, f'shot_{int(time.time())}_{game.t:06d}.png')
-            pygame.image.save(frame.subsurface(pygame.Rect(sx, sy, disp.size[0], disp.size[1])), path)
-            print('saved', path)
+            view = frame.subsurface(pygame.Rect(sx, sy, disp.size[0], disp.size[1]))
+            name = f'screenshot_{time.strftime("%Y%m%d_%H%M%S")}_{game.t % 1000:03d}.png'
+            for folder in (photos, shots):
+                try:
+                    os.makedirs(folder, exist_ok=True)
+                    pygame.image.save(view, os.path.join(folder, name))
+                except (OSError, pygame.error) as e:
+                    print('screenshot: could not write to', folder, e)
+                    continue
+                print('screenshot saved:', os.path.join(folder, name))
+                if game.on_title or game.menu is not None or game.journal is not None:
+                    audio.play('shutter', 0.5)              # (no HUD toast over those screens: a click)
+                else:
+                    q = game.toasts                         # one toast for presses in a row
+                    if not any(d.get('title') == 'SCREENSHOT SAVED' for d in [q.cur or {}] + q.queue):
+                        q.push('SCREENSHOT SAVED', folder_label(folder), 'camera', urgent=True)
+                break
         pygame.display.flip()
         if not capped and dt < 1 / 150:               # vsync was promised but frames come too fast
             fast += 1

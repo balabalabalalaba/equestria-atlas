@@ -253,7 +253,9 @@ class Album:
         from engine.loc_worldmap import LOCS
         lid = getattr(g.mode, 'ID', None)
         where = LOCS[lid]['name'].upper() if lid in LOCS else 'THE WORLD MAP'
-        q.push('POSTCARD SAVED', where + '  -  PRESS J TO SEE IT', 'camera', sound=None)
+        label = getattr(g, 'photo_label', None)         # the folder it went to, so it can be shared
+        q.push('POSTCARD SAVED', (label + '  -  J TO SEE IT') if label else (where + '  -  PRESS J TO SEE IT'),
+               'camera', sound=None)
         q.queue.insert(0, q.queue.pop())
         q.queue[0]['urgent'] = True         # it answers a key press: no early-session pacing wait (no cut)
 

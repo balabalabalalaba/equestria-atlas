@@ -91,7 +91,7 @@ on a Mac, `%APPDATA%\Equestria Atlas` on Windows) instead of `out/`.
 | J | atlas journal (← → turn its pages) | atlas journal |
 | P | postcard snapshot (ticks album targets) | postcard snapshot (ticks album targets) |
 | F / F11 | fullscreen (remembered) | fullscreen |
-| F12 | screenshot to `out/game_shots/` | screenshot |
+| F12 | screenshot (no pause) to the postcards' folder (Pictures/Equestria Atlas), with a toast | same |
 | H | hide / show the HUD (clean screenshots; menus and the journal still show) | same |
 
 To quit, choose QUIT in the pause menu (ESC on the map; in a place, ESC takes off first) or close
@@ -214,6 +214,11 @@ takes a postcard and 7 (Start) pauses. The menus' CONTROLS page shows all of thi
   (`ShortcutKeys`, Microsoft's advice for games), and put back on focus loss and at exit; the originals
   wait in `shortcut_keys.json` in the user folder meanwhile, so a killed game puts them back on its next
   start. (No CTRL boost: CTRL+ESC opens the Start menu.)
+- **Settings that change the window** (WINDOW / FULLSCREEN) close the display and open a fresh one
+  (`REBUILD_WINDOW`, GitHub issue #5: a player's picture froze until restart after a change); the quiet
+  focus-loss freeze also ends whenever the window really has the keyboard focus (`FOCUS_CHECK`).
+- **Map rings and race gates** count when the balloon's envelope centre meets the ring's centre
+  (`MapMode.envelope()`; before, the shadow point was used and rings counted at the basket, issue #5).
 - **Tilting views** (GitHub issue #4): in a place whose camera tilts (`cam_y` span), the world is placed
   at whole art px vertically (`Frame.snap_y`): its layers tilt at different rates, and the sub-pixel
   shift (one rate for the whole picture) made the slow ones bounce up and down while the camera tilted.

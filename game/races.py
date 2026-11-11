@@ -25,7 +25,7 @@ from engine import W, H, Sprite, fx, seg, ease_out_back, text, text_width
 from . import ui, perks
 
 TIMEOUT = 20 * 30               # steps without a gate before a run is called off
-MAP_REACH = 11                  # map: balloon ground point <-> gate ground point
+MAP_REACH = 11                  # map: envelope centre <-> ring centre (as ground points: + MAP_RING_UP)
 REGION_REACH = 12               # place: envelope centre <-> gate centre
 MAP_RING_UP = 34                # a map gate's ring floats this far above its ground point
 REARM = 45                      # steps after a run ends before the start gate works again
@@ -253,7 +253,8 @@ class Races:
         if m.landing is not None:
             self.cancel()
             return
-        self._advance(m.bx, m.by, MAP_REACH, 'map', 0, heading=(m.vx, m.vy))
+        ex, ey = m.envelope()                           # the envelope's centre, in the gates' ground frame:
+        self._advance(ex, ey + MAP_RING_UP, MAP_REACH, 'map', 0, heading=(m.vx, m.vy))   # (issue #5)
 
     def map_draw(self, c, t, x0, y0, active):
         """active False: the idle start gates (under the fog); True: the course being flown (over it)."""
