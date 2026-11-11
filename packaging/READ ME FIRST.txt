@@ -25,8 +25,11 @@ CONTROLS
   SPACE               land / do something / pick up and deliver
   ESC                 take off (in a place) / pause menu (on the map, also QUIT)
   J  journal          M  map         P  postcard (photo album)
-  F  fullscreen       F12  screenshot
-A gamepad works too. If you click away to another window, the game pauses for you.
+  F  fullscreen       F12  screenshot     H  hide / show the HUD (for clean screenshots)
+A gamepad works too. If you click away to another window (or open a screenshot tool), the game freezes
+right where it is, with nothing drawn over the view, and goes on when you click back into it.
+A Chinese / Japanese / Korean input method stays switched off inside the game window, so WASD and
+SHIFT always fly the balloon.
 
 
 BALLOONS WITH PERKS

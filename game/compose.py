@@ -12,7 +12,15 @@ So a `Frame` carries
                near half of a cloud hoop the balloon flies through), or None,
   - `hud`    : screen-fixed UI on a KEY-coloured canvas (opaque pixels only),
   - `iris`   : (t, cx, cy) of an iris wipe over everything,
-  - `dim`    : darken the world and sprites under the HUD (the pause menu).
+  - `dim`    : darken the world and sprites under the HUD (the pause menu),
+  - `snap_y` : place the world at whole art px vertically (no sub-pixel y). A view that tilts has
+               layers moving at different vertical rates (a far castle at 0.2x, the dock at 1x), but the
+               sub-pixel shift moves the whole picture at 1x: a slow layer was pushed up to 3/4 px with the
+               camera, then snapped back a whole px when the integer camera stepped, so it bounced up and
+               down while the camera tilted (GitHub issue #4, Canterlot's airship docks). The balloons
+               keep the smooth sub-pixel camera (they glide on screen exactly as without snap_y; placed
+               against the snapped world they would jump back a px each time it steps); the ground
+               they fly over steps whole px under them.
 `compose(frame, k)` scales by k (nearest) and places the world and the sprites with 1/k art-px
 precision, so motion is smooth while every art pixel stays a sharp k x k block. The camera's window
 pixel is derived from the focus: cam_px = round(focus*k) - round((focus - cam)*k), so the balloon moves
@@ -44,6 +52,7 @@ class Frame:
         self.iris = None
         self.flash = 0.0                # 0..1 white over everything (the postcard camera)
         self.dim = False                # darken the world and sprites (under the HUD): the pause menu
+        self.snap_y = False             # whole-art-px world y (a view with vertical parallax; see above)
 
     def balloon(self, wx, wy, f, size='m', flame=False, bob=True, tint=None, pattern='classic', hop=0.0,
                 cargo=None, wet=0.0, snow=0.0):
@@ -383,8 +392,10 @@ def _compose(fr, k, big):
     (ix, iy), (cx, cy) = fr.origin, fr.cam
     fx, fy = fr.focus if fr.focus is not None else (None, None)
     sx = min(k - 1, max(0, _cam_px(ix, cx, fx, k) - ix * k))
-    sy = min(k - 1, max(0, _cam_px(iy, cy, fy, k) - iy * k))
+    sy_free = min(k - 1, max(0, _cam_px(iy, cy, fy, k) - iy * k))
+    sy = 0 if fr.snap_y else sy_free
     x0, y0 = ix * k + sx, iy * k + sy                 # window origin in world*k pixels
+    yb0 = iy * k + sy_free                            # the balloons' origin: always the smooth camera
     dim = _dim if fr.dim else None                    # the pause dim: applied per art px (cheap), not
     wa = _dim(fr.world.a) if dim else fr.world.a      # over the whole window image
     # the upscale works on whole 4-byte pixels (RGBX as one uint32): one broadcast write, ~6x faster than
@@ -411,7 +422,7 @@ def _compose(fr, k, big):
             dy = bob_dy(f, size) if bob else 0.0
             h, w = spr.shape[0] // k, spr.shape[1] // k
             x = int(round(wx * k)) - x0 - (w // 2) * k
-            y = int(round((wy + dy) * k)) - y0 - h * k
+            y = int(round((wy + dy) * k)) - yb0 - h * k
             _paste_rgba(out, _dim_rgba(spr) if dim else spr, x, y)
             if cargo:
                 cg = _cargo_rgba(cargo, size, k, tint)

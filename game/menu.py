@@ -262,6 +262,7 @@ CONTROLS = [
     ('camera', ['P'], ['BACK']),
     ('pause', ['ESC'], ['START']),
     ('fullscreen', ['F'], []),
+    ('window', ['H'], []),                  # hide / show the HUD (clean screenshots)
 ]
 CTRL_W, CTRL_H = 216, 152
 
@@ -339,6 +340,7 @@ class PauseMenu:
         src = self.frozen
         fr = Frame(src.world, src.origin, src.cam, src.focus)
         fr.sprites = list(src.sprites)
+        fr.snap_y = getattr(src, 'snap_y', False)       # (else the frozen view slips a sub-pixel)
         fr.dim = True
         c = fr.hud
         if self.page == 'controls':

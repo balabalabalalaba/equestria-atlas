@@ -27,7 +27,7 @@ from engine import worldmap_icons as WI
 from engine.atlas import map_pin, draw_balloon
 
 from . import ui, perks, daylight
-from .compose import Frame, compose, VIEW_W, VIEW_H
+from .compose import Frame, compose, VIEW_W, VIEW_H, KEY
 from .fog import PLACE_REVEAL
 
 HOUR = 8.0                      # a new journey starts in the morning
@@ -232,6 +232,7 @@ class Game:
         self._ov_fade = None            # (picture faded from, 'journal' | 'world', clock step it began)
         self.menu = None                # the open pause menu (an overlay), or None
         self._last_frame = None         # the last Frame rendered (frozen behind the pause menu)
+        self.hud_hidden = False         # H (game/play.py): no HUD over the view, for clean screenshots
         self._region_mod = regions()
         self.region_ids = tuple(self._region_mod)
         self._regions = {}
@@ -682,6 +683,8 @@ class Game:
                 fr.iris = (1.0, *tr['c'])
             else:
                 fr.iris = (1 - ease_out(k), *tr['c'])
+        if self.hud_hidden and not self.on_title and not self.tutor.card:
+            fr.hud = Canvas(color=KEY)                  # (before the journal's fade bakes the frame)
         self._last_frame = fr
         return self._faded(fr, 'world', t, alpha)
 

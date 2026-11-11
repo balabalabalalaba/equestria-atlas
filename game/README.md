@@ -92,6 +92,7 @@ on a Mac, `%APPDATA%\Equestria Atlas` on Windows) instead of `out/`.
 | P | postcard snapshot (ticks album targets) | postcard snapshot (ticks album targets) |
 | F / F11 | fullscreen (remembered) | fullscreen |
 | F12 | screenshot to `out/game_shots/` | screenshot |
+| H | hide / show the HUD (clean screenshots; menus and the journal still show) | same |
 
 To quit, choose QUIT in the pause menu (ESC on the map; in a place, ESC takes off first) or close
 the window. Progress is saved either way.
@@ -202,8 +203,22 @@ takes a postcard and 7 (Start) pauses. The menus' CONTROLS page shows all of thi
   effects are muted), and the music dips by about 4 dB while the journal or the pause menu is open.
   The sound effects are the film's procedural library. Everything plays at 48 kHz (the mixer is opened
   at that rate before pygame starts).
-- **Window**: clicking away to another window opens the pause menu (the world waits); a minimised
-  window stops drawing and holds the sound. Fullscreen draws the view at the largest whole scale that
+- **Window**: clicking away to another window (or a screenshot tool taking the focus) freezes the world
+  quietly, with nothing drawn over the view, and holds the sound; it runs on when the window gets the
+  focus back (GitHub issue #2: the pause menu used to open and covered the view). A minimised window
+  stops drawing and holds the sound.
+- **Keyboard on Windows** (GitHub issue #1): SDL's text input is off, the IME is disabled for the
+  game's threads and the window's IME context is detached (`calm_ime`), so a Chinese IME in Chinese mode no longer swallows WASD and SHIFT no longer
+  flips it; while the window has the focus, the Sticky / Filter / Toggle Keys *shortcuts* (SHIFT x5,
+  right SHIFT held 8 s) are off for the session when the player has not turned those features on
+  (`ShortcutKeys`, Microsoft's advice for games), and put back on focus loss and at exit; the originals
+  wait in `shortcut_keys.json` in the user folder meanwhile, so a killed game puts them back on its next
+  start. (No CTRL boost: CTRL+ESC opens the Start menu.)
+- **Tilting views** (GitHub issue #4): in a place whose camera tilts (`cam_y` span), the world is placed
+  at whole art px vertically (`Frame.snap_y`): its layers tilt at different rates, and the sub-pixel
+  shift (one rate for the whole picture) made the slow ones bounce up and down while the camera tilted.
+  The balloons keep the smooth sub-pixel camera on screen; check with `tools/claude_issue4_allviews.py`
+  (`NOSNAP=1` for the old behaviour). Fullscreen draws the view at the largest whole scale that
   fits the screen, centred on black (every art pixel the same size: no shimmer as the camera glides).
 - **Robustness**: a place that fails to load, fails on arrival (its enter hooks raise) or crashes
   sends you back to (or keeps you on) the map, padlocked for that session, and the error is printed.

@@ -35,6 +35,11 @@ No installation is needed and nothing else has to be downloaded. Progress is sav
 | ESC | take off (in a place) / pause menu (on the map) |
 | J / M / P | journal, overview map, postcard |
 | F | fullscreen |
+| H | hide / show the HUD (for clean screenshots); F12 saves a screenshot |
+
+Clicking away to another window (or opening a screenshot tool) freezes the game with nothing drawn over the
+view; it goes on when you click back. A Chinese input method can stay on: inside the game window it is
+switched off, so WASD and SHIFT always work.
 
 A gamepad works too. More tips are in `READ ME FIRST.txt` inside the zip.
 
@@ -89,6 +94,9 @@ Every version tag (`git tag v1.1 && git push origin v1.1`) builds the Windows zi
 | ESC | 起飞（在地点里）/ 暂停菜单（在地图上） |
 | J / M / P | 日记、总览地图、拍明信片 |
 | F | 全屏 |
+| H | 隐藏 / 显示界面（方便截干净的图）；F12 保存截图 |
+
+切到别的窗口（或打开截图工具）时，游戏会原地暂停，画面上不盖任何菜单；点回游戏窗口就继续。中文输入法开着也没关系：在游戏窗口里输入法会自动关闭，WASD 和 SHIFT 始终有效。
 
 也可以用手柄玩。压缩包里的 `READ ME FIRST.txt` 有更多小提示（英文）。
 

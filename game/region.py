@@ -808,6 +808,7 @@ class Region:
         self._shown = (t, world, ix, iy, bx, by)
         self._sweep_new = None
         fr = Frame(world, (ix, iy), (cx, cy), (bx, by))
+        fr.snap_y = self.area.cam_y[0] != self.area.cam_y[1]   # a tilting view: whole-px world y (compose)
         flame = self.boost or self.climb or self.leaving is not None
         hop = 0.0                                           # a happy hop when a stamp is grabbed
         if self.stamp_flash is not None and 0 <= t - self.stamp_flash < 14:

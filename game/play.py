@@ -7,8 +7,10 @@ Keys: arrows / WASD fly the balloon, SHIFT boost, SPACE / ENTER land (map) or se
 balloon is next to (in a place), ESC take off (in a place), close a screen, or pause (on the map),
 M overview map, J atlas journal (and the balloon wardrobe), P postcard snapshot (Pictures/Equestria Atlas;
 the journal's PHOTOS page shows them all, full screen with SPACE),
-F fullscreen, F12 raw screenshot; quit from the pause menu (QUIT) or by closing the window. Gamepad: stick / d-pad fly, A (button 0) land / set off,
+F fullscreen, H hide / show the HUD (clean screenshots), F12 raw screenshot; quit from the pause menu (QUIT) or by closing the window. Gamepad: stick / d-pad fly, A (button 0) land / set off,
 B (1) take off, X (2) journal, Y (3) map, shoulders boost, Back (6) postcard, Start (7) pause.
+When the window loses focus the world freezes quietly (no menu over the view, so a screenshot tool
+catches the scenery) and runs on when the window is clicked again; ESC opens the pause menu.
 Progress is saved to out/game_save.json, settings (volumes, window scale, fullscreen) to
 out/game_settings.json.
 
@@ -370,6 +372,136 @@ class Audio:
                 self.chans[1].pause()
 
 
+def calm_ime():
+    """Keep an input method (Chinese / Japanese / Korean IME) out of the game window (GitHub issue #1).
+
+    pygame turns SDL's text input on by default, and on Windows that hands every key to the IME: with a
+    Chinese IME in Chinese mode W / A / S / D went into its composition window and never reached the game,
+    and tapping SHIFT (to boost) flipped the IME between Chinese and English. The game never needs typed
+    text, so text input is turned off (SDL then also detaches the IME from the window), and on Windows the
+    window's IME context is detached explicitly as well. Called after every display (re)creation and
+    whenever the window gets the focus back (another app may have switched the IME on)."""
+    try:
+        pygame.key.stop_text_input()
+    except (pygame.error, AttributeError):
+        pass
+    if os.name != 'nt':
+        return
+    try:
+        import ctypes
+        ctypes.windll.imm32.ImmDisableIME(ctypes.c_uint32(0xFFFFFFFF).value)   # every thread of the game
+        hwnd = pygame.display.get_wm_info().get('window')
+        if hwnd:
+            imm = ctypes.windll.imm32
+            imm.ImmAssociateContext.argtypes = [ctypes.c_void_p, ctypes.c_void_p]
+            imm.ImmAssociateContext.restype = ctypes.c_void_p
+            imm.ImmAssociateContext(ctypes.c_void_p(hwnd), None)
+    except Exception as e:                              # (no imm32: nothing to detach)
+        print('ime: could not detach the input method:', e)
+
+
+class ShortcutKeys:
+    """Windows' accessibility shortcuts fire on the boost key: SHIFT pressed five times asks to turn on
+    Sticky Keys, right SHIFT held for 8 s asks to turn on Filter Keys. Their dialog takes the focus away
+    in the middle of a flight (GitHub issue #1). As Microsoft recommends for games ("Disabling shortcut
+    keys in games"), while the game window has the focus the *shortcuts* of features that are OFF are
+    disabled, for this session only (not saved to the user's profile); the player's own settings are put
+    back as soon as the window loses the focus and when the game quits. A feature the player has turned
+    ON is left alone. Does nothing outside Windows."""
+
+    SPI = {'sticky': (0x003A, 0x003B, 2), 'toggle': (0x0034, 0x0035, 2), 'filter': (0x0032, 0x0033, 6)}
+    ON, HOTKEY, CONFIRM = 0x1, 0x4, 0x8
+
+    def __init__(self, path=None):
+        self.saved = None                   # name -> original flags while disabled
+        self.ok = os.name == 'nt'
+        self.path = path                    # the originals, on disk while disabled: a game that was killed
+        if self.ok:                         # (no atexit) puts them back on its next start
+            import atexit
+            atexit.register(self.restore)
+            self._recover()
+
+    def _recover(self):
+        if not self.path or not os.path.exists(self.path):
+            return
+        try:
+            import json
+            with open(self.path) as fh:
+                self.saved = {k: int(v) for k, v in json.load(fh).items() if k in self.SPI}
+        except (OSError, ValueError, AttributeError, TypeError):
+            self.saved = None
+        if self.saved is None:
+            self._forget()
+        else:
+            print('shortcut keys: putting back the settings a previous session left changed')
+            self.restore()
+
+    def _struct(self, n):
+        import ctypes
+
+        class S(ctypes.Structure):
+            _fields_ = [('cbSize', ctypes.c_uint), ('dwFlags', ctypes.c_uint)] + \
+                       [('f%d' % i, ctypes.c_uint) for i in range(n - 2)]
+        s = S()
+        s.cbSize = ctypes.sizeof(S)
+        return s
+
+    def disable(self):
+        if not self.ok or self.saved is not None:
+            return
+        import ctypes
+        spi = ctypes.windll.user32.SystemParametersInfoW
+        self.saved = {}
+        try:
+            for name, (get, put, n) in self.SPI.items():
+                s = self._struct(n)
+                if not spi(get, s.cbSize, ctypes.byref(s), 0):
+                    continue
+                flags = s.dwFlags
+                if flags & self.ON:                     # the player uses this feature: leave it be
+                    continue
+                self.saved[name] = flags
+                self._keep()                                # on disk BEFORE anything changes
+                s.dwFlags = flags & ~(self.HOTKEY | self.CONFIRM)
+                spi(put, s.cbSize, ctypes.byref(s), 0)      # fWinIni 0: this session only
+        except Exception as e:
+            print('shortcut keys: left as they are:', e)
+
+    def _keep(self):
+        if self.path:
+            try:
+                import json
+                with open(self.path, 'w') as fh:
+                    json.dump(self.saved, fh)
+            except OSError:
+                pass
+
+    def _forget(self):
+        if self.path:
+            try:
+                os.remove(self.path)
+            except OSError:
+                pass
+
+    def restore(self):
+        if not self.ok or self.saved is None:
+            return
+        import ctypes
+        spi = ctypes.windll.user32.SystemParametersInfoW
+        try:
+            for name, flags in self.saved.items():
+                get, put, n = self.SPI[name]
+                s = self._struct(n)
+                if spi(get, s.cbSize, ctypes.byref(s), 0):
+                    s.dwFlags = flags
+                    spi(put, s.cbSize, ctypes.byref(s), 0)
+        except Exception as e:
+            print('shortcut keys: could not restore:', e)
+            return                                      # (the file stays: the next start tries again)
+        self.saved = None
+        self._forget()
+
+
 PAD_DEAD = 0.35
 PAD_BUTTONS = {0: 'action', 1: 'back', 2: 'journal', 3: 'map', 6: 'postcard', 7: 'pause'}
 
@@ -496,6 +628,7 @@ class Display:
             except (ImportError, AttributeError, pygame.error):
                 pass
         self.k, self.full = k, s.fullscreen
+        calm_ime()                          # a new / changed window: keep the IME out of it (issue #1)
         self.size = (VIEW_W * k, VIEW_H * k)
         sw, sh = self.screen.get_size()
         self.offset = (max(0, (sw - self.size[0]) // 2), max(0, (sh - self.size[1]) // 2))
@@ -700,6 +833,12 @@ def run(game, settings, args, audio, disp, clock, pads, shots, photos, applied):
     hidden = False                  # the window is minimised: nothing runs, the sound is held
     fast = 0                        # frames in a row that came quicker than any display refresh
     capped = not disp.vsync
+    away = False                    # the window lost the focus: the world is frozen (no menu: issue #2)
+    held_alpha = 0.0                # the in-between position the frozen view is drawn at
+    shortcuts = ShortcutKeys(os.path.join(user_dir(), 'shortcut_keys.json'))   # Windows' Sticky / Filter
+    if pygame.key.get_focused():    # Keys shortcuts: off only while the window has the focus (issue #1)
+        shortcuts.disable()
+    calm_ime()
     while not game.quit:
         for ev in pygame.event.get():
             if ev.type == pygame.QUIT:
@@ -722,6 +861,8 @@ def run(game, settings, args, audio, disp, clock, pads, shots, photos, applied):
                     pressed.add('postcard')
                 elif ev.key == pygame.K_F12:
                     pressed.add('shot')
+                elif ev.key == pygame.K_h:
+                    game.hud_hidden = not game.hud_hidden
             elif ev.type == pygame.JOYBUTTONDOWN and ev.button in PAD_BUTTONS:
                 pressed.add(PAD_BUTTONS[ev.button])
             elif ev.type == pygame.JOYDEVICEADDED:
@@ -730,20 +871,42 @@ def run(game, settings, args, audio, disp, clock, pads, shots, photos, applied):
                 pads.append(js)
                 print('gamepad:', js.get_name())
             elif ev.type == getattr(pygame, 'WINDOWFOCUSLOST', -1):
-                # the player went to another window: the world waits for them under the pause menu
-                if game.menu is None and game.journal is None and game.trans is None and not game.on_title \
-                        and not game.tutor.card and type(game.mode).__name__ != 'Cutscene':
-                    game.open_pause()
+                # the player went to another window (or a screenshot tool took the focus): the world
+                # freezes where it is, with nothing drawn over it, and the sound holds; it runs on when
+                # the window gets the focus back (ESC still opens the pause menu). GitHub issue #2: the
+                # pause menu used to open here and covered the view the player wanted to capture.
+                shortcuts.restore()
+                if not away:
+                    away = True
+                    held_alpha = min(1.0, acc / STEP)
+                    audio.pause_all(True)
+            elif ev.type == getattr(pygame, 'WINDOWFOCUSGAINED', -1):
+                shortcuts.disable()
+                calm_ime()
+                if away:
+                    away = False
+                    if not hidden:
+                        audio.pause_all(False)
+                    last = time.perf_counter()
+                    acc = held_alpha * STEP
             elif ev.type == getattr(pygame, 'WINDOWMINIMIZED', -1):
                 hidden = True
                 audio.pause_all(True)
             elif ev.type in (getattr(pygame, 'WINDOWRESTORED', -1), getattr(pygame, 'WINDOWSHOWN', -1)):
                 if hidden:
                     hidden = False
-                    audio.pause_all(False)
+                    if not away:
+                        audio.pause_all(False)
                     last = time.perf_counter()
         if hidden:                                      # minimised: no drawing, no clock; ~10 checks a second
             clock.tick(10)
+            continue
+        if away:                                        # frozen: redraw the same view, ~30 times a second
+            last = time.perf_counter()
+            buf, sx, sy = compose_window(game.render(held_alpha), disp.k)
+            disp.show(buf, sx, sy)
+            pygame.display.flip()
+            clock.tick(30)
             continue
         now = time.perf_counter()
         dt = now - last
@@ -805,6 +968,7 @@ def run(game, settings, args, audio, disp, clock, pads, shots, photos, applied):
             clock.tick(120 if disp.vsync else 60)
         if args.frames and steps_run >= args.frames:
             game.quit = True
+    shortcuts.restore()
 
 
 def music_wanted(game):
